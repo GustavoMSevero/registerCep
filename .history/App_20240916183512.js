@@ -16,15 +16,15 @@ export default function App() {
     let response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
     let body = await response.json();
     
+    //setData(body);
     setLogradouro(body.logradouro);
     setBairro(body.bairro);
     setLocalidade(body.localidade);
     setUF(body.uf);
-    setData(body);
   }
 
   async function registerCep() {
-    console.log(data);
+    console.log(dataCep);
     // const result = await axios.post("http://localhost:8888/web/apiCep/api.php", {
     //   ...body,
     //   option: "register cep"

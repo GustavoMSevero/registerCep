@@ -10,26 +10,16 @@ export default function App() {
   const [bairro, setBairro] = useState(null)
   const [localidade, setLocalidade] = useState(null)
   const [uf, setUF] = useState(null)
-  const {data, setData} = useState({});
 
   async function getCep() {
     let response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
     let body = await response.json();
-    
+
     setLogradouro(body.logradouro);
     setBairro(body.bairro);
     setLocalidade(body.localidade);
     setUF(body.uf);
-    setData(body);
-  }
 
-  async function registerCep() {
-    console.log(data);
-    // const result = await axios.post("http://localhost:8888/web/apiCep/api.php", {
-    //   ...body,
-    //   option: "register cep"
-    // });
-    // console.log(result)
   }
 
   return (
@@ -72,12 +62,7 @@ export default function App() {
         >
           <Text style={styles.textButton}>Buscar CEP</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.buttonCadastra}
-          onPress={registerCep}
-        >
-          <Text style={styles.textButtonCadastra}>Cadastra CEP</Text>
-        </TouchableOpacity>
+      
       <StatusBar style="auto" />
     </View>
   );
@@ -106,7 +91,6 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 20,
-    marginBottom: 20,
     backgroundColor: "lightgreen",
     width: "70%",
     alignItems: "center",
@@ -115,17 +99,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   textButton: {
-    fontWeight: "bold",
-  },
-  buttonCadastra: {
-    backgroundColor: "lightblue",
-    width: "70%",
-    alignItems: "center",
-    justifyContent: "center",
-    height: 50,
-    borderRadius: 20,
-  },
-  textButtonCadastra: {
     fontWeight: "bold",
   }
 });

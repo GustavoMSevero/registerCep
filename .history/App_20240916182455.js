@@ -10,21 +10,21 @@ export default function App() {
   const [bairro, setBairro] = useState(null)
   const [localidade, setLocalidade] = useState(null)
   const [uf, setUF] = useState(null)
-  const {data, setData} = useState({});
+  const {dataCep, setDataCep} = useState({});
 
   async function getCep() {
     let response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
     let body = await response.json();
-    
+
     setLogradouro(body.logradouro);
     setBairro(body.bairro);
     setLocalidade(body.localidade);
     setUF(body.uf);
-    setData(body);
+    setDataCep(body)
   }
 
   async function registerCep() {
-    console.log(data);
+    console.log(dataCep);
     // const result = await axios.post("http://localhost:8888/web/apiCep/api.php", {
     //   ...body,
     //   option: "register cep"

@@ -24,7 +24,7 @@ export default function App() {
   }
 
   async function registerCep() {
-    console.log(data);
+    console.log(dataCep);
     // const result = await axios.post("http://localhost:8888/web/apiCep/api.php", {
     //   ...body,
     //   option: "register cep"

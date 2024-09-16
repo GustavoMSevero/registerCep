@@ -20,11 +20,11 @@ export default function App() {
     setBairro(body.bairro);
     setLocalidade(body.localidade);
     setUF(body.uf);
-    setData(body);
+    setDataCep(body);
   }
 
   async function registerCep() {
-    console.log(data);
+    console.log(dataCep);
     // const result = await axios.post("http://localhost:8888/web/apiCep/api.php", {
     //   ...body,
     //   option: "register cep"
