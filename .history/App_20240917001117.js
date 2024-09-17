@@ -30,7 +30,9 @@ export default function App() {
       uf: uf,
     };
 
-    const result = await axios.post('http://localhost:8888/web/apiCep/api.php', {
+    axios.defaults.baseURL = 'http://localhost:8888';
+
+    const result = await axios.post('/web/apiCep/api.php', {
       ...cepData,
       option: 'register cep',
     })
