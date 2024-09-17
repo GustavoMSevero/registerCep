@@ -30,12 +30,11 @@ export default function App() {
       uf: uf,
     };
 
-    const result = await axios.post('https://localhost:8888/web/apiCep/api.php', {
+    const result = await axios.post('localhost:8888/web/apiCep/api.php', {
       ...cepData,
       option: 'register cep',
     });
     console.log(result)
-
   }
 
   return (

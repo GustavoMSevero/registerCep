@@ -29,13 +29,12 @@ export default function App() {
       localidade: localidade,
       uf: uf,
     };
-
-    const result = await axios.post('https://localhost:8888/web/apiCep/api.php', {
+    // console.log(cepData);
+    const result = await axios.post("http://localhost:8888/web/apiCep/api.php", {
       ...cepData,
-      option: 'register cep',
+      option: "register cep"
     });
     console.log(result)
-
   }
 
   return (

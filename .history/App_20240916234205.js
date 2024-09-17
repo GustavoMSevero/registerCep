@@ -35,7 +35,6 @@ export default function App() {
       option: 'register cep',
     });
     console.log(result)
-
   }
 
   return (
