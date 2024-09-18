@@ -30,6 +30,7 @@ export default function App() {
       uf: uf,
     };
 
+    // const result = await axios.post('127.0.0.1/web/apiCep/api.php', {
     const result = await api.post('/api.php', {
       ...cepData,
       option: 'register cep',
@@ -61,7 +62,6 @@ export default function App() {
       <View style={styles.viewInput}>
         <Text>Logradouro</Text>
         <TextInput
-          readOnly
           style={styles.input}
           value={logradouro}
         />
@@ -69,7 +69,6 @@ export default function App() {
       <View style={styles.viewInput}>
         <Text>Bairro</Text>
         <TextInput
-          readOnly
           style={styles.input}
           value={bairro}
         />
@@ -77,7 +76,6 @@ export default function App() {
       <View style={styles.viewInput}>
         <Text>Cidade</Text>
         <TextInput
-          readOnly
           style={styles.input}
           value={localidade}
         />

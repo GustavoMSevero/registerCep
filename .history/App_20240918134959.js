@@ -12,7 +12,7 @@ export default function App() {
   const [uf, setUF] = useState(null)
 
   async function getCep() {
-    let response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+    let response = await api.get(`https://viacep.com.br/ws/${cep}/json/`);
     let body = await response.json();
     
     setLogradouro(body.logradouro);
@@ -61,7 +61,6 @@ export default function App() {
       <View style={styles.viewInput}>
         <Text>Logradouro</Text>
         <TextInput
-          readOnly
           style={styles.input}
           value={logradouro}
         />
@@ -69,7 +68,6 @@ export default function App() {
       <View style={styles.viewInput}>
         <Text>Bairro</Text>
         <TextInput
-          readOnly
           style={styles.input}
           value={bairro}
         />
@@ -77,7 +75,6 @@ export default function App() {
       <View style={styles.viewInput}>
         <Text>Cidade</Text>
         <TextInput
-          readOnly
           style={styles.input}
           value={localidade}
         />

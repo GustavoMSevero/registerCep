@@ -1,7 +1,7 @@
+import axios from 'axios';
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
-import api from './service/api';
 
 export default function App() {
 
@@ -30,7 +30,8 @@ export default function App() {
       uf: uf,
     };
 
-    const result = await api.post('/api.php', {
+    // 127.0.0.1
+    const result = await axios.post('http://localhost:8888/web/apiCep/api.php', {
       ...cepData,
       option: 'register cep',
     })
@@ -61,7 +62,6 @@ export default function App() {
       <View style={styles.viewInput}>
         <Text>Logradouro</Text>
         <TextInput
-          readOnly
           style={styles.input}
           value={logradouro}
         />
@@ -69,7 +69,6 @@ export default function App() {
       <View style={styles.viewInput}>
         <Text>Bairro</Text>
         <TextInput
-          readOnly
           style={styles.input}
           value={bairro}
         />
@@ -77,7 +76,6 @@ export default function App() {
       <View style={styles.viewInput}>
         <Text>Cidade</Text>
         <TextInput
-          readOnly
           style={styles.input}
           value={localidade}
         />

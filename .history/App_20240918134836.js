@@ -61,7 +61,6 @@ export default function App() {
       <View style={styles.viewInput}>
         <Text>Logradouro</Text>
         <TextInput
-          readOnly
           style={styles.input}
           value={logradouro}
         />
@@ -69,7 +68,6 @@ export default function App() {
       <View style={styles.viewInput}>
         <Text>Bairro</Text>
         <TextInput
-          readOnly
           style={styles.input}
           value={bairro}
         />
@@ -77,7 +75,6 @@ export default function App() {
       <View style={styles.viewInput}>
         <Text>Cidade</Text>
         <TextInput
-          readOnly
           style={styles.input}
           value={localidade}
         />
