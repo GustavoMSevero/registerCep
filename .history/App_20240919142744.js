@@ -35,10 +35,9 @@ export default function App() {
       option: 'register cep',
     })
     .then(result => {
-      // console.log(result.data);
+      // Handle result data
+      console.log(result.data);
       if(result.data.status == 1) {
-        alert(result.data.msg)
-      } else if(result.data.status == 2) {
         alert(result.data.msg)
       }
     })
