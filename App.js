@@ -41,6 +41,10 @@ export default function App() {
       } else if(result.data.status == 2) {
         alert(result.data.msg)
       }
+      setLogradouro(null);
+      setBairro(null);
+      setLocalidade(null);
+      setUF(null);
     })
     .catch(error => {
       // Handle error

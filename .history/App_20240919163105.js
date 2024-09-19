@@ -35,12 +35,16 @@ export default function App() {
       option: 'register cep',
     })
     .then(result => {
-      console.log(result.data);
+      // console.log(result.data);
       if(result.data.status == 1) {
         alert(result.data.msg)
       } else if(result.data.status == 2) {
         alert(result.data.msg)
       }
+      setLogradouro(null);
+      setBairro(null);
+      setLocalidade(null);
+      setUF(null);
     })
     .catch(error => {
       // Handle error
