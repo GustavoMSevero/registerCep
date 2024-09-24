@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import api from "../../../service/api";
 
+import styles from "./style";
+
 export default function Ceps() {
 
     const [cepList, setCepList] = useState([]);
 
     const getCeps = async () => {
-        const result = await api.get('getCep.php', {
+        const result = await api.get('api.php', {
             params: {
                 option: 'get ceps',
             },
@@ -23,6 +25,7 @@ export default function Ceps() {
     return(
         <View style={styles.container}>
             <FlatList
+                showsVerticalScrollIndicator={false}
                 data={cepList}
                 renderItem={({item}) => {
                     return(
@@ -43,21 +46,9 @@ export default function Ceps() {
                     )
                 }}
                 keyExtractor={(item) => {
-                    item.idCep
+                    item.idcep
                 }}
-            
             />
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        marginTop: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-    title: {
-        fontWeight: "bold",
-    }
-})

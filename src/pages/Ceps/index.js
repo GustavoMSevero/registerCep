@@ -25,6 +25,7 @@ export default function Ceps() {
     return(
         <View style={styles.container}>
             <FlatList
+                showsVerticalScrollIndicator={false}
                 data={cepList}
                 renderItem={({item}) => {
                     return(
