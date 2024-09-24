@@ -41,6 +41,10 @@ export default function App() {
       } else if(result.data.status == 2) {
         alert(result.data.msg)
       }
+      setLogradouro(null);
+      setBairro(null);
+      setLocalidade(null);
+      setUF(null);
     })
     .catch(error => {
       // Handle error
@@ -98,6 +102,12 @@ export default function App() {
         >
           <Text style={styles.textButtonCadastra}>Cadastra CEP</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttonListagem}
+          // onPress={registerCep}
+        >
+          <Text style={styles.textButtonListagem}>Listagem de CEPs</Text>
+        </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
@@ -144,8 +154,21 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     height: 50,
     borderRadius: 20,
+    marginBottom: 20,
   },
   textButtonCadastra: {
+    fontWeight: "bold",
+  },
+  buttonListagem: {
+    backgroundColor: "yellow",
+    width: "70%",
+    alignItems: "center",
+    justifyContent: "center",
+    height: 50,
+    borderRadius: 20,
+    marginBottom: 20,
+  },
+  textButtonListagem: {
     fontWeight: "bold",
   }
 });
